@@ -24,7 +24,7 @@ def main():
     
         while count > 0:
             task = random.choice([files.Scan,files.Video, files.Sound])
-            task.__init__(task)
+            task = task.__init__(task)
             checker = False
             
             while checker==False:
