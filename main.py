@@ -1,5 +1,7 @@
 import random
-import files
+from Scan import *
+from Sound import *
+from Video import *
 
 def main():
     
@@ -20,10 +22,11 @@ def main():
 
 
     def exercise():
+      
         count = user_input()
     
         while count > 0:
-            task = random.choice([files.Scan,files.Video, files.Sound])
+            task = random.choice([Scan,Video, Sound])
             task = task.__init__(task)
             checker = False
             
