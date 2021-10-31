@@ -25,7 +25,7 @@ class Video:
         print(f"Duration: {self.duration} min")
         duration_sec = self.duration * 60
 
-        bitSize = ((frame*self.debth*self.framesPerSecond)/self.compression)+duration_sec
+        bitSize = ((frame*self.debth*self.framesPerSecond)/self.compression)*duration_sec
 
         fileSize = bitSize/8/(1024*1024)
         fileSize = round(fileSize,2)
