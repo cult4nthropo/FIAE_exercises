@@ -22,14 +22,13 @@ def main():
 
 
     def exercise():
-      
+       
         count = user_input()
     
         while count > 0:
-            task = random.choice([Scan,Video, Sound])
-            task = task.__init__(task)
             checker = False
-            
+            task = random.choice([Scan,Video, Sound])
+            task.calc()
             while checker==False:
                 answer = input("what would be your solution in MiB? Please round to 2 decimals  ")
                 try:
@@ -40,10 +39,10 @@ def main():
                     checker = False
                 continue
             
-            if answer == task:
+            if answer == task.calc():
                 print("yay, correct answer")
             else:
-                print(f"sorry, the correct answer was: {task}")
+                print(f"sorry, the correct answer was: {task.calc()}")
 
             count -=1
     exercise()
