@@ -1,7 +1,8 @@
 import random
-from Scan import *
-from Sound import *
-from Video import *
+import Scan
+import Sound
+import Video
+import calc
 
 def main():
     
@@ -28,7 +29,7 @@ def main():
         while count > 0:
             checker = False
             task = random.choice([Scan,Video, Sound])
-            task.calc()
+            calc.calc(task)
             while checker==False:
                 answer = input("what would be your solution in MiB? Please round to 2 decimals  ")
                 try:
@@ -39,10 +40,10 @@ def main():
                     checker = False
                 continue
             
-            if answer == task.calc():
+            if answer == calc.calc(task):
                 print("yay, correct answer")
             else:
-                print(f"sorry, the correct answer was: {task.calc()}")
+                print(f"sorry, the correct answer was: {calc.calc(task)}")
 
             count -=1
     exercise()
