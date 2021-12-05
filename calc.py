@@ -13,15 +13,15 @@ def calc(task):
         height = random.randint(15, 45)
         print(f"Height:\t\t {height} cm")
         height_inch = height/2.54
-        debth = 2**(random.randint(4, 8))
-        print(f"Debth:\t\t {debth} bit")
+        depth = 2**(random.randint(4, 8))
+        print(f"Debth:\t\t {depth} bit")
         compression = random.randint(4, 20)
         print(f"Compression:\t {compression} x")
         resolution = random.choice([300, 400, 500, 600, 700, 800, 900, 1000, 1200])
         print(f"Resolution:\t {resolution} dpi")
 
     
-        bitSize = ((((width_inch*resolution*height_inch*resolution))*debth)/compression)
+        bitSize = ((((width_inch*resolution*height_inch*resolution))*depth)/compression)
 
         fileSize = bitSize/8/(1024*1024)
         fileSize = round(fileSize,2)
@@ -53,15 +53,15 @@ def calc(task):
         frame = width*height
         framesPerSecond = random.randint(50, 4000)
         print(f"Frames per second: {framesPerSecond}")
-        debth = 2**(random.randint(6, 12))
-        print(f"Debth: {debth} bit")
+        depth = 2**(random.randint(6, 12))
+        print(f"Debth: {depth} bit")
         compression = random.randint(4, 20)
         print(f"Compression: {compression} x")
         duration = random.randint(60,240)
         print(f"Duration: {duration} min")
         duration_sec = duration * 60
 
-        bitSize = ((frame * debth * framesPerSecond) / compression) * duration_sec
+        bitSize = ((frame * depth * framesPerSecond) / compression) * duration_sec
 
         fileSize = bitSize / 8 / (1024 * 1024)
         fileSize = round(fileSize,2)
